@@ -1,0 +1,4 @@
+rootProject.name = 'pico-erp-production-execution'
+include 'api'
+include 'impl'
+include 'test'

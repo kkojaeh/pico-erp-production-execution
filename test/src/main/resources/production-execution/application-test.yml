@@ -1,0 +1,12 @@
+data:
+  production-executions:
+  - id: production-execution-1
+    item-id: toothbrush-0
+    process-id: toothbrush-0
+    item-spec-code: N/A
+    quantity: 100
+    error-quantity: 5
+    unit: EA
+    executor-id: kjh
+    start-date: "2019-03-03T09:00:00+09:00"
+    end-date: "2019-03-03T18:00:00+09:00"
