@@ -8,15 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
-import pico.erp.audit.AuditApi;
-import pico.erp.audit.AuditConfiguration;
 import pico.erp.item.ItemApi;
 import pico.erp.process.ProcessApi;
-import pico.erp.process.ProcessId;
 import pico.erp.production.execution.ProductionExecutionApi.Roles;
 import pico.erp.production.order.ProductionOrderApi;
-import pico.erp.production.order.ProductionOrderId;
-import pico.erp.project.ProjectApi;
 import pico.erp.shared.ApplicationId;
 import pico.erp.shared.ApplicationStarter;
 import pico.erp.shared.Public;
@@ -24,7 +19,6 @@ import pico.erp.shared.SpringBootConfigs;
 import pico.erp.shared.data.Role;
 import pico.erp.shared.impl.ApplicationImpl;
 import pico.erp.user.UserApi;
-import pico.erp.warehouse.WarehouseApi;
 
 @Slf4j
 @SpringBootConfigs
@@ -71,14 +65,14 @@ public class ProductionExecutionApplication implements ApplicationStarter {
 
   @Bean
   @Public
-  public Role productionExecutor() {
-    return Roles.PRODUCTION_EXECUTOR;
+  public Role productionExecuteManager() {
+    return Roles.PRODUCTION_EXECUTE_MANAGER;
   }
 
   @Bean
   @Public
-  public Role productionExecuteManager() {
-    return Roles.PRODUCTION_EXECUTE_MANAGER;
+  public Role productionExecutor() {
+    return Roles.PRODUCTION_EXECUTOR;
   }
 
   @Override

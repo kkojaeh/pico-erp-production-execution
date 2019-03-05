@@ -12,6 +12,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import lombok.val;
 import pico.erp.item.ItemId;
 import pico.erp.item.spec.ItemSpecCode;
 import pico.erp.process.ProcessId;
@@ -85,12 +86,15 @@ public class ProductionExecution implements Serializable {
     if (!isUpdatable()) {
       throw new ProductionExecutionExceptions.CannotUpdateException();
     }
+    val previousQuantity = this.quantity;
+    val previousErrorQuantity = this.errorQuantity;
     this.quantity = request.getQuantity();
     this.errorQuantity = request.getErrorQuantity();
     this.startDate = request.getStartDate();
     this.endDate = request.getEndDate();
     return new ProductionExecutionMessages.Update.Response(
-      Arrays.asList(new ProductionExecutionEvents.UpdatedEvent(this.id))
+      Arrays.asList(new ProductionExecutionEvents.UpdatedEvent(this.id, previousQuantity,
+        previousErrorQuantity))
     );
   }
 

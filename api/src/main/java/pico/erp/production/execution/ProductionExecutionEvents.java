@@ -1,5 +1,6 @@
 package pico.erp.production.execution;
 
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,10 @@ public interface ProductionExecutionEvents {
     public final static String CHANNEL = "event.production-execution.updated";
 
     private ProductionExecutionId id;
+
+    private BigDecimal previousQuantity;
+
+    private BigDecimal previousErrorQuantity;
 
     public String channel() {
       return CHANNEL;
