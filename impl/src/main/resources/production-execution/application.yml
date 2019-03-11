@@ -87,6 +87,6 @@ flyway:
   enabled: false
 
 production-execution:
-  accepter-group:
+  executor-group:
     id: prde-executor
     name: 구매요청 접수자
