@@ -12,6 +12,6 @@ import pico.erp.user.group.GroupData;
 @ConfigurationProperties("production-execution")
 public class ProductionExecutionPropertiesImpl implements ProductionExecutionProperties {
 
-  GroupData accepterGroup;
+  GroupData executorGroup;
 
 }

@@ -88,5 +88,5 @@ flyway:
 
 production-execution:
   accepter-group:
-    id: pr-accepter
+    id: prde-executor
     name: 구매요청 접수자
