@@ -21,12 +21,12 @@ public class ProductionExecutionInitializer implements ApplicationInitializer {
 
   @Override
   public void initialize() {
-    val accepterGroup = properties.getAccepterGroup();
-    if (!groupService.exists(accepterGroup.getId())) {
+    val executorGroup = properties.getExecutorGroup();
+    if (!groupService.exists(executorGroup.getId())) {
       groupService.create(
         GroupRequests.CreateRequest.builder()
-          .id(accepterGroup.getId())
-          .name(accepterGroup.getName())
+          .id(executorGroup.getId())
+          .name(executorGroup.getName())
           .build()
       );
     }
