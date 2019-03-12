@@ -89,4 +89,4 @@ flyway:
 production-execution:
   executor-group:
     id: prde-executor
-    name: 구매요청 접수자
+    name: 생산 진행자
