@@ -14,7 +14,7 @@ public final class ProductionExecutionApi {
   public enum Roles implements Role {
 
     PRODUCTION_EXECUTOR,
-    PRODUCTION_EXECUTE_MANAGER;
+    PRODUCTION_EXECUTION_MANAGER;
 
     @Id
     @Getter

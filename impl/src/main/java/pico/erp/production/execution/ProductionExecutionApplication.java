@@ -65,8 +65,8 @@ public class ProductionExecutionApplication implements ApplicationStarter {
 
   @Bean
   @Public
-  public Role productionExecuteManager() {
-    return Roles.PRODUCTION_EXECUTE_MANAGER;
+  public Role productionExecutionManager() {
+    return Roles.PRODUCTION_EXECUTION_MANAGER;
   }
 
   @Bean
