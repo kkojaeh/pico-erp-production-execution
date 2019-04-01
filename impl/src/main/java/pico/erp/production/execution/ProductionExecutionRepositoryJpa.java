@@ -32,23 +32,23 @@ public class ProductionExecutionRepositoryJpa implements ProductionExecutionRepo
 
   @Override
   public void deleteBy(ProductionExecutionId id) {
-    repository.delete(id);
+    repository.deleteById(id);
   }
 
   @Override
   public boolean exists(ProductionExecutionId id) {
-    return repository.exists(id);
+    return repository.existsById(id);
   }
 
   @Override
   public Optional<ProductionExecution> findBy(ProductionExecutionId id) {
-    return Optional.ofNullable(repository.findOne(id))
+    return repository.findById(id)
       .map(mapper::jpa);
   }
 
   @Override
   public void update(ProductionExecution plan) {
-    val entity = repository.findOne(plan.getId());
+    val entity = repository.findById(plan.getId()).get();
     mapper.pass(mapper.jpa(plan), entity);
     repository.save(entity);
   }

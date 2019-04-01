@@ -1,7 +1,7 @@
 package pico.erp.production.execution;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import lombok.Data;
 import pico.erp.item.ItemId;
 import pico.erp.item.spec.ItemSpecCode;
@@ -31,11 +31,11 @@ public class ProductionExecutionData {
 
   UserId executorId;
 
-  OffsetDateTime startDate;
+  LocalDateTime startDate;
 
-  OffsetDateTime endDate;
+  LocalDateTime endDate;
 
-  OffsetDateTime executedDate;
+  LocalDateTime executedDate;
 
   boolean updatable;
 

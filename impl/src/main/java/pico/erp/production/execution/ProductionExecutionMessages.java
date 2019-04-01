@@ -1,7 +1,7 @@
 package pico.erp.production.execution;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -57,10 +57,10 @@ public interface ProductionExecutionMessages {
       UserId executorId;
 
       @NotNull
-      OffsetDateTime startDate;
+      LocalDateTime startDate;
 
       @NotNull
-      OffsetDateTime endDate;
+      LocalDateTime endDate;
 
     }
 
@@ -87,10 +87,10 @@ public interface ProductionExecutionMessages {
       BigDecimal errorQuantity;
 
       @NotNull
-      OffsetDateTime startDate;
+      LocalDateTime startDate;
 
       @NotNull
-      OffsetDateTime endDate;
+      LocalDateTime endDate;
 
     }
 

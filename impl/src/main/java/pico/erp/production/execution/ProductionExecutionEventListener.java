@@ -1,8 +1,8 @@
 package pico.erp.production.execution;
 
+import kkojaeh.spring.boot.component.Take;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.context.event.EventListener;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
@@ -15,11 +15,9 @@ public class ProductionExecutionEventListener {
 
   private static final String LISTENER_NAME = "listener.production-execution-event-listener";
 
-  @Lazy
-  @Autowired
+  @Take
   private ProductionOrderService productionOrderService;
 
-  @Lazy
   @Autowired
   private ProductionExecutionService productionExecutionService;
 

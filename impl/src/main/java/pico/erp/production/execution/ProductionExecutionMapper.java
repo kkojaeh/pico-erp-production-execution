@@ -1,10 +1,10 @@
 package pico.erp.production.execution;
 
+import kkojaeh.spring.boot.component.Take;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Mappings;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.AuditorAware;
 import pico.erp.item.ItemService;
 import pico.erp.item.spec.ItemSpecService;
@@ -16,12 +16,10 @@ public abstract class ProductionExecutionMapper {
   @Autowired
   protected AuditorAware<Auditor> auditorAware;
 
-  @Lazy
-  @Autowired
+  @Take
   protected ItemService itemService;
 
-  @Lazy
-  @Autowired
+  @Take
   protected ItemSpecService itemSpecService;
 
 
