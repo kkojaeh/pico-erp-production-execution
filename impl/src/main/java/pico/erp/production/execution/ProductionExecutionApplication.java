@@ -1,6 +1,6 @@
 package pico.erp.production.execution;
 
-import kkojaeh.spring.boot.component.Give;
+import kkojaeh.spring.boot.component.ComponentBean;
 import kkojaeh.spring.boot.component.SpringBootComponent;
 import kkojaeh.spring.boot.component.SpringBootComponentBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import pico.erp.ComponentDefinition;
 import pico.erp.production.execution.ProductionExecutionApi.Roles;
 import pico.erp.shared.SharedConfiguration;
 import pico.erp.shared.data.Role;
@@ -27,7 +28,7 @@ import pico.erp.shared.data.Role;
 @Import(value = {
   SharedConfiguration.class
 })
-public class ProductionExecutionApplication {
+public class ProductionExecutionApplication implements ComponentDefinition {
 
   public static void main(String[] args) {
     new SpringBootComponentBuilder()
@@ -35,14 +36,19 @@ public class ProductionExecutionApplication {
       .run(args);
   }
 
+  @Override
+  public Class<?> getComponentClass() {
+    return ProductionExecutionApplication.class;
+  }
+
   @Bean
-  @Give
+  @ComponentBean(host = false)
   public Role productionExecutionManager() {
     return Roles.PRODUCTION_EXECUTION_MANAGER;
   }
 
   @Bean
-  @Give
+  @ComponentBean(host = false)
   public Role productionExecutor() {
     return Roles.PRODUCTION_EXECUTOR;
   }

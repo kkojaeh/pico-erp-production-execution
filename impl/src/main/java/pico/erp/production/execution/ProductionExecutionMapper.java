@@ -1,6 +1,6 @@
 package pico.erp.production.execution;
 
-import kkojaeh.spring.boot.component.Take;
+import kkojaeh.spring.boot.component.ComponentAutowired;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Mappings;
@@ -16,10 +16,10 @@ public abstract class ProductionExecutionMapper {
   @Autowired
   protected AuditorAware<Auditor> auditorAware;
 
-  @Take
+  @ComponentAutowired
   protected ItemService itemService;
 
-  @Take
+  @ComponentAutowired
   protected ItemSpecService itemSpecService;
 
 
