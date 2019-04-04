@@ -2,7 +2,7 @@ package pico.erp.production.execution;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import javax.persistence.Id;
 import lombok.AccessLevel;
@@ -52,11 +52,11 @@ public class ProductionExecution implements Serializable {
 
   UserId executorId;
 
-  OffsetDateTime startDate;
+  LocalDateTime startDate;
 
-  OffsetDateTime endDate;
+  LocalDateTime endDate;
 
-  OffsetDateTime executedDate;
+  LocalDateTime executedDate;
 
   public ProductionExecution() {
 
@@ -75,7 +75,7 @@ public class ProductionExecution implements Serializable {
     this.executorId = request.getExecutorId();
     this.startDate = request.getStartDate();
     this.endDate = request.getEndDate();
-    this.executedDate = OffsetDateTime.now();
+    this.executedDate = LocalDateTime.now();
     return new ProductionExecutionMessages.Create.Response(
       Arrays.asList(new ProductionExecutionEvents.CreatedEvent(this.id))
     );
@@ -102,7 +102,7 @@ public class ProductionExecution implements Serializable {
     if (executedDate == null) {
       return false;
     }
-    return OffsetDateTime.now().isBefore(executedDate.plusDays(1));
+    return LocalDateTime.now().isBefore(executedDate.plusDays(1));
   }
 
 

@@ -1,7 +1,7 @@
 package pico.erp.production.execution;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,11 +34,11 @@ public class ProductionExecutionView {
 
   UserId executorId;
 
-  OffsetDateTime startDate;
+  LocalDateTime startDate;
 
-  OffsetDateTime endDate;
+  LocalDateTime endDate;
 
-  OffsetDateTime executedDate;
+  LocalDateTime executedDate;
 
   @Data
   @NoArgsConstructor
@@ -52,9 +52,9 @@ public class ProductionExecutionView {
 
     ItemId itemId;
 
-    OffsetDateTime startDate;
+    LocalDateTime startDate;
 
-    OffsetDateTime endDate;
+    LocalDateTime endDate;
 
   }
 
