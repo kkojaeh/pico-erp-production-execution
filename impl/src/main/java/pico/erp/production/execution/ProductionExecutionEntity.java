@@ -3,7 +3,7 @@ package pico.erp.production.execution;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -84,11 +84,11 @@ public class ProductionExecutionEntity implements Serializable {
   @Enumerated(EnumType.STRING)
   UnitKind unit;
 
-  LocalDateTime startDate;
+  OffsetDateTime startDate;
 
-  LocalDateTime endDate;
+  OffsetDateTime endDate;
 
-  LocalDateTime executedDate;
+  OffsetDateTime executedDate;
 
   @Embedded
   @AttributeOverrides({

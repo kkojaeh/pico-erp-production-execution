@@ -15,7 +15,7 @@ import pico.erp.shared.data.UnitKind
 import pico.erp.user.UserId
 import spock.lang.Specification
 
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 @SpringBootTest(classes = [ProductionExecutionApplication, TestConfig])
 @SpringBootTestComponent(parent = TestParentApplication, siblingsSupplier = ComponentDefinitionServiceLoaderTestComponentSiblingsSupplier.class)
@@ -45,9 +45,9 @@ class ProductionExecutionServiceSpec extends Specification {
 
   def unit = UnitKind.EA
 
-  def startDate = LocalDateTime.now().minusHours(3)
+  def startDate = OffsetDateTime.now().minusHours(3)
 
-  def endDate = LocalDateTime.now()
+  def endDate = OffsetDateTime.now()
 
   def setup() {
     requestService.create(
